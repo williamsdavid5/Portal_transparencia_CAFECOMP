@@ -1,0 +1,50 @@
+h1 {
+    margin: 0;
+    font-weight: 900;
+}
+
+p {
+    margin: 0;
+}
+
+.window {
+    display: flex;
+    width: 100vw;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#valores {
+    display: flex;
+    gap: 20px;
+    margin: 5px 0px;
+}
+
+#info {
+    background-color: #D1D1D1;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px 0px;
+}
+
+#botaoFeedback {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: 900;
+    padding: 10px;
+    margin: 5px 0px;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    #valores {
+        flex-direction: column;
+    }
+}

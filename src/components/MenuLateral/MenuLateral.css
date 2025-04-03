@@ -1,0 +1,45 @@
+.menuLateral {
+    background-color: #002C69;
+    width: 200px;
+    height: 100vh;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+img {
+    width: 100%;
+    height: auto;
+    margin: 20px;
+}
+
+.active {
+    background-color: black;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.1s ease-in-out;
+    width: 100%;
+    height: 10%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a:hover {
+    background-color: #001839;
+}
+
+@media (max-width: 700px) {
+    .menuLateral {
+        display: none;
+    }
+}
