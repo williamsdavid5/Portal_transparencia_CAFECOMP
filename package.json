@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "portal_transparencia": "file:",
+    "portal-transparencia": "file:",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

@@ -10,43 +10,58 @@ function App() {
     <div className="window">
       <MenuLateral />
       <main className={`content ${modalAberto ? "blur" : ""}`}>
-        <h1>Resumo Financeiro</h1>
-        <p>Aqui você pode ver os principais indicadores.</p>
+        <div id="aux">
+          <h1>Resumo Financeiro</h1>
+          <p>Aqui você pode ver os principais indicadores.</p>
 
-        <div id="valores">
-          <QuadroValores
-            titulo={"Saldo atual"}
-            valor={"725,50"}
-            complemento={"última atualização: 03/04"}
-          />
-          <QuadroValores
-            titulo={"Média diária"}
-            valor={"15,00"}
-            complemento={""}
-          />
+          <div id="valores">
+            <QuadroValores
+              titulo={"Saldo atual"}
+              valor={"725,50"}
+              complemento={"última atualização: 03/04"}
+            />
+            <QuadroValores
+              titulo={"Média diária"}
+              valor={"15,00"}
+              complemento={""}
+            />
+          </div>
+
+          <div id="info">
+            <p>
+              O caixa do CAFECOMP é formado por arrecadações de eventos, vendas e
+              contribuições diversas. Esses recursos são usados para promover
+              atividades, apoiar projetos estudantis, organizar eventos e oferecer
+              suporte aos alunos da FECOMP. Prezamos pela transparência, e todos
+              os valores arrecadados e utilizados estão sempre acessíveis para
+              consulta. Nosso objetivo é reinvestir cada centavo em benefícios
+              para a comunidade acadêmica, tornando a experiência de todos mais
+              rica e colaborativa.
+            </p>
+          </div>
+
+          <div id="feedback">
+            <p>
+              Dúvidas? Reclamações? Envie um feedback e entraremos em contato!
+            </p>
+            <button id="botaoFeedback" onClick={() => setModalAberto(true)}>
+              FEEDBACK
+            </button>
+          </div>
         </div>
 
-        <div id="info">
-          <p>
-            O caixa do CAFECOMP é formado por arrecadações de eventos, vendas e
-            contribuições diversas. Esses recursos são usados para promover
-            atividades, apoiar projetos estudantis, organizar eventos e oferecer
-            suporte aos alunos da FECOMP. Prezamos pela transparência, e todos
-            os valores arrecadados e utilizados estão sempre acessíveis para
-            consulta. Nosso objetivo é reinvestir cada centavo em benefícios
-            para a comunidade acadêmica, tornando a experiência de todos mais
-            rica e colaborativa.
-          </p>
-        </div>
-
-        <div id="feedback">
-          <p>
-            Dúvidas? Reclamações? Envie um feedback e entraremos em contato!
-          </p>
-          <button id="botaoFeedback" onClick={() => setModalAberto(true)}>
-            FEEDBACK
-          </button>
-        </div>
+        <footer id="footer">
+          <div id="esquerda">
+            <h1>CAFECOMP</h1>
+            <p>Centro acadêmico de Engenharia de Computação “Janderson Souza“ <br />
+              Universidade Federal do Pará <br />
+              Campus Universitário de Tucuruí</p>
+          </div>
+          <div id="direita">
+            <img src="src\assets\images\Logomarca BRANCA.png" alt="" />
+            <img src="src\assets\images\ufpa.png" alt="" />
+          </div>
+        </footer>
       </main>
 
       {/* Modal de Feedback */}

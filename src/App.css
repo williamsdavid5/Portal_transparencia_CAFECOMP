@@ -15,21 +15,27 @@ p {
 
 .content {
   flex: 1;
-  padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 10px;
   transition: filter 0.3s;
+  box-sizing: border-box;
+}
+
+#aux {
+  padding: 20px;
+  height: 100%;
 }
 
 .content.blur {
-  filter: blur(5px); /* Agora só o conteúdo principal fica embasado */
+  filter: blur(5px);
+  /* Agora só o conteúdo principal fica embasado */
 }
 
 #valores {
   display: flex;
   gap: 20px;
-  margin: 5px 0px;
+  margin: 10px 0px;
 }
 
 #info {
@@ -63,7 +69,8 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Fundo escuro */
+  background: rgba(0, 0, 0, 0.5);
+  /* Fundo escuro */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -117,7 +124,33 @@ textarea {
   color: black;
 }
 
-@media (max-width: 768px) {
+#footer {
+  background-color: black;
+  color: white;
+  padding: 10px 0px;
+  display: flex;
+  gap: 10px;
+}
+
+#footer #esquerda {
+  border-right: solid 2px white;
+  padding: 0px 15px;
+}
+
+#footer img {
+  width: 50px;
+  height: auto;
+  object-fit: contain;
+  margin: 0 15px;
+  padding: 0;
+}
+
+#footer #direita {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 700px) {
   .window {
     flex-direction: column;
   }
@@ -126,17 +159,24 @@ textarea {
     flex-direction: column;
   }
 
-  .footer {
-    flex-direction: column;
-    text-align: center;
-  }
-
   #botaoFeedback {
     width: 100%;
   }
 
   .modal {
     width: 90%;
+  }
+
+  #footer {
+    flex-direction: column;
+  }
+
+  #footer #esquerda {
+    border: none;
+  }
+
+  #footer #direita {
+    justify-content: center;
   }
 }
 
