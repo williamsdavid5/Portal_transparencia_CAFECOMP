@@ -3,13 +3,21 @@ import "./App.css";
 import MenuLateral from "./components/MenuLateral/MenuLateral";
 import QuadroValores from "./components/QuadroValores/QuadroValores";
 import Footer from "./components/Footer/Footer";
+import { Menu } from "lucide-react";
 
 function App() {
   const [modalAberto, setModalAberto] = useState(false);
+  const [menuAberto, setMenuAberto] = useState(false);
 
   return (
     <div className="window">
-      <MenuLateral />
+      <button
+        className="botaoMenuMobile"
+        onClick={() => setMenuAberto(!menuAberto)}
+      >
+        <Menu size={30} />
+      </button>
+      <MenuLateral visivel={menuAberto} onFechar={() => setMenuAberto(false)} />
       <main className={`content ${modalAberto ? "blur" : ""}`}>
         <div id="aux">
           <h1>Resumo Financeiro</h1>
@@ -54,7 +62,6 @@ function App() {
         <Footer />
       </main>
 
-      {/* Modal de Feedback */}
       {modalAberto && (
         <div className="modal-overlay">
           <div className="modal">
