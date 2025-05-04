@@ -4,7 +4,7 @@ function QuadroValores({ titulo, valor, complemento }) {
     return (
         <div className='valoresjanela'>
             <p>{titulo}</p>
-            <h1>R$ {valor}</h1>
+            <h1>{valor}</h1>
             <p>{complemento}</p>
         </div>
     )
