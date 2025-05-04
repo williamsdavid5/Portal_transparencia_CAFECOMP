@@ -22,7 +22,7 @@ function App() {
   };
 
   useEffect(() => {
-    fetch("http://localhost:4000/api/caixa")
+    fetch("https://portal-transparencia-cafecomp-backend.onrender.com/api/caixa")
       .then((res) => res.json())
       .then((data) => {
         const ultimo = data
