@@ -4,6 +4,8 @@ import MenuLateral from "./components/MenuLateral/MenuLateral";
 import QuadroValores from "./components/QuadroValores/QuadroValores";
 import Footer from "./components/Footer/Footer";
 import Transacoes from "./components/Transacoes/Transacoes";
+import Graficos from "./components/Graficos/Graficos";
+import Alertas from "./components/Alertas/Alertas";  {/* ✅ Importação do componente */}
 import { Menu } from "lucide-react";
 
 function App() {
@@ -12,7 +14,7 @@ function App() {
   const [saldo, setSaldo] = useState([]);
   const [paginaAtual, setPaginaAtual] = useState("dashboard");
   const [paginaSelecionada, setPaginaSelecionada] = useState("dashboard");
-  const [saldoCompleto, setSaldoCompleto] = useState([]);
+  const [saldoCompleto, setSaldoCompleto] = useState([]);  {/* ✅ Armazenando todos os dados */}
 
   const onSelecionarPagina = (pagina) => {
     setPaginaSelecionada(pagina);
@@ -23,12 +25,11 @@ function App() {
     fetch("http://localhost:4000/api/caixa")
       .then((res) => res.json())
       .then((data) => {
-        // Ordena por data crescente e pega o último
         const ultimo = data
           .sort((a, b) => new Date(a.data) - new Date(b.data))
           .at(-1);
         setSaldo([ultimo]);
-        setSaldoCompleto(data);
+        setSaldoCompleto(data);  {/* ✅ Passando todos os dados */}
       })
       .catch((err) => {
         console.error("Erro ao buscar dados:", err);
@@ -103,8 +104,8 @@ function App() {
         )}
 
         {paginaAtual === "transacoes" && <Transacoes dados={saldoCompleto} />}
-        {paginaAtual === "graficos" && <Graficos />}
-        {paginaAtual === "alertas" && <Alertas />}
+        {paginaAtual === "graficos" && <Graficos dados={saldoCompleto} />}
+        {paginaAtual === "alertas" && <Alertas dados={saldoCompleto} />} {/* ✅ Passando os dados para Alertas */}
 
         <Footer />
       </main>
